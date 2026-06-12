@@ -45,3 +45,73 @@ const flashcardsData = [
     { de: "einzukaufen, anzurufen, aufzustehen", ro: "verbe separabile: zu se bagă ÎNTRE prefix și verb", audio: "audio/letters/regel-separabile.wav" },
     { de: "Komma vor um / vor damit", ro: "mereu virgulă înainte de um și de damit", audio: "audio/letters/regel-komma.wav" }
 ];
+
+// ============================================
+// RUNTIME FLASHCARDS — render + flip (.flipped) + navigare + audio WAV
+// Markup aliniat la CSS-ul lecției (.flashcard-controls / .flashcard-btn)
+// flipCard() comută clasa .flipped → CSS dezvăluie traducerea (.flashcard.flipped .ro)
+// ============================================
+let currentCardIndex = 0;
+
+function buildFlashcards() {
+    const container = document.getElementById('flashcards-container');
+    if (!container) return;
+    container.innerHTML = `
+        <div class="exercise-instruction">
+            <strong>📇 ${flashcardsData.length} flashcards cu pronunție.</strong><br>
+            Click pe card pentru traducere · 🔊 pentru pronunție · butoanele pentru navigare.
+        </div>
+        <div class="flashcard-counter" id="flashcard-counter">Card 1 / ${flashcardsData.length}</div>
+        <div class="flashcard" id="flashcard" onclick="flipCard()">
+            <button class="flashcard-audio-btn" onclick="playFlashcardAudio(event)" title="Ascultă pronunția">🔊</button>
+            <div class="flashcard-content"><div class="de" id="flashcard-de">${flashcardsData[0].de}</div><div class="ro" id="flashcard-ro">${flashcardsData[0].ro}</div></div>
+            <div class="flashcard-hint">👆 Click pentru traducere</div>
+        </div>
+        <div class="flashcard-controls">
+            <button class="flashcard-btn" onclick="prevCard()" id="prev-btn">← Anterior</button>
+            <button class="flashcard-btn" onclick="nextCard()" id="next-btn">Următor →</button>
+        </div>
+    `;
+    updateFlashcard();
+}
+
+function updateFlashcard() {
+    const card = document.getElementById('flashcard');
+    const de = document.getElementById('flashcard-de');
+    const ro = document.getElementById('flashcard-ro');
+    const counter = document.getElementById('flashcard-counter');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    if (!card || !de || !ro || !counter) return;
+    const c = flashcardsData[currentCardIndex];
+    de.textContent = c.de;
+    ro.textContent = c.ro;
+    card.classList.remove('flipped');
+    counter.textContent = `Card ${currentCardIndex + 1} / ${flashcardsData.length}`;
+    if (prevBtn) prevBtn.disabled = currentCardIndex === 0;
+    if (nextBtn) nextBtn.disabled = currentCardIndex === flashcardsData.length - 1;
+}
+
+function flipCard() {
+    const card = document.getElementById('flashcard');
+    if (card) card.classList.toggle('flipped');
+}
+
+function nextCard() {
+    if (currentCardIndex < flashcardsData.length - 1) { currentCardIndex++; updateFlashcard(); }
+}
+
+function prevCard() {
+    if (currentCardIndex > 0) { currentCardIndex--; updateFlashcard(); }
+}
+
+function playFlashcardAudio(event) {
+    event.stopPropagation();
+    const card = flashcardsData[currentCardIndex];
+    if (card && card.audio) {
+        const audio = new Audio(card.audio);
+        audio.play().catch(err => console.log('Audio nu poate fi redat:', err));
+    }
+}
+
+document.addEventListener('DOMContentLoaded', buildFlashcards);
