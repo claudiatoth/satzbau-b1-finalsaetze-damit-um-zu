@@ -35,8 +35,8 @@
         t = t.replace(/<div class="sub-section">/g, '<div>');
         t = t.replace(/<div class="sub-section-content"[^>]*>/g, '<div>');
         t = t.replace(/<div class="theory-box"\s+style="background:\s*#dbeafe[^"]*"[^>]*>/g, '<div class="theory-box info-box">');
-        t = t.replace(/<div class="theory-box"\s+style="background:\s*#fffbeb[^"]*"[^>]*>/g, '<div class="theory-box warn-box">');
-        t = t.replace(/<div class="theory-box"\s+style="background:\s*#fef3c7[^"]*"[^>]*>/g, '<div class="theory-box warn-box">');
+        t = t.replace(/<div class="theory-box"\s+style="background:\s*#F5F0E8[^"]*"[^>]*>/g, '<div class="theory-box warn-box">');
+        t = t.replace(/<div class="theory-box"\s+style="background:\s*#F5F0E8[^"]*"[^>]*>/g, '<div class="theory-box warn-box">');
         t = t.replace(/<div class="theory-box"\s+style="background:\s*#fef2f2[^"]*"[^>]*>/g, '<div class="theory-box" style="border-left:3px solid #ef4444;">');
         t = t.replace(/<div class="theory-box"\s+style="background:\s*#ecfdf5[^"]*"[^>]*>/g, '<div class="theory-box" style="border-left:3px solid #10b981;">');
         return `<h1 class="chapter">📘 1. Teorie — Finalsätze: damit / um … zu (propoziții de scop)</h1>` + t;

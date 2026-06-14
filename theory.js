@@ -88,7 +88,7 @@ const theoryHTML = `
                 <p class="ro">Muncesc atât de mult, ca să-mi pot permite concediul.</p>
             </div>
 
-            <div class="theory-box" style="background: #fffbeb; border-color: #f59e0b;">
+            <div class="theory-box" style="background: #F5F0E8; border-color: #D4A574;">
                 <h4>📍 Poziția propoziției cu „damit"</h4>
                 <p>De obicei Nebensatz-ul stă <strong>după</strong> propoziția principală, dar îl poți și <strong>muta în față</strong>. Dacă situația e clară, poate sta chiar <strong>singur</strong>.</p>
             </div>
@@ -227,7 +227,7 @@ const theoryHTML = `
                     <tr><td class="verb">will → scos</td><td>Ich brauche viel Geld, um viel <strong>zu reisen</strong>.</td><td class="ro-text">Îmi trebuie mulți bani ca să călătoresc mult.</td></tr>
                 </tbody>
             </table>
-            <div class="theory-box" style="background: #fffbeb; border-color: #f59e0b;">
+            <div class="theory-box" style="background: #F5F0E8; border-color: #D4A574;">
                 <p style="margin:0;">❌ INTERZIS: <span style="text-decoration: line-through;">..., um viel reisen <strong>zu wollen</strong>.</span> &nbsp;|&nbsp; <span style="text-decoration: line-through;">..., damit ich viel reisen <strong>will</strong>.</span></p>
             </div>
         </div>

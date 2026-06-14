@@ -111,7 +111,7 @@ function buildEx2() {
         html += `<div class="exercise-item">
             <span class="exercise-number">${i + 1}</span>
             <div class="input-group">
-                <p style="margin-bottom:6px;"><strong>${it.prompt}</strong><br><em style="color:#6b7280; font-size:0.9rem;">${it.hint}</em></p>
+                <p style="margin-bottom:6px;"><strong>${it.prompt}</strong><br><em style="color:#5A5147; font-size:0.9rem;">${it.hint}</em></p>
                 <input type="text" id="ex2-${it.id}" placeholder="forma corectă...">
             </div>
             <div class="feedback" id="ex2-f${it.id}"></div>
@@ -167,7 +167,7 @@ function buildEx3() {
         html += `<div class="exercise-item">
             <span class="exercise-number">${i + 1}</span>
             <div class="input-group">
-                <p style="margin-bottom:6px;"><strong>${it.prompt}</strong><br><em style="color:#6b7280; font-size:0.9rem;">${it.hint}</em></p>
+                <p style="margin-bottom:6px;"><strong>${it.prompt}</strong><br><em style="color:#5A5147; font-size:0.9rem;">${it.hint}</em></p>
                 <input type="text" id="ex3-${it.id}" placeholder="... um ... zu ...">
             </div>
             <div class="feedback" id="ex3-f${it.id}"></div>
@@ -222,7 +222,7 @@ function buildEx4() {
         html += `<div class="exercise-item">
             <span class="exercise-number">${i + 1}</span>
             <div class="input-group">
-                <p style="margin-bottom:6px;"><strong>${it.prompt}</strong><br><em style="color:#6b7280; font-size:0.9rem;">${it.hint}</em></p>
+                <p style="margin-bottom:6px;"><strong>${it.prompt}</strong><br><em style="color:#5A5147; font-size:0.9rem;">${it.hint}</em></p>
                 <input type="text" id="ex4-${it.id}" placeholder="forma corectă...">
             </div>
             <div class="feedback" id="ex4-f${it.id}"></div>
@@ -324,7 +324,7 @@ function schreibwerkstattHTML() {
         <a href="https://forms.gle/dvQxgScS8ETCzSAY9" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #10B981; color: white; padding: 13px 30px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 1rem; box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);">
             Trimite textul Claudiei →
         </a>
-        <p style="color: #6b7280; font-size: 0.78rem; margin-top: 12px; font-style: italic;">
+        <p style="color: #5A5147; font-size: 0.78rem; margin-top: 12px; font-style: italic;">
             ʚଓ Răspuns personal pe email · Nu uita să-ți treci adresa de email în formular
         </p>
     </div>`;
